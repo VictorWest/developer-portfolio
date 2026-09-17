@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { projects, type Project } from "@/lib/portfolio-data";
-import { ArrowUpRight, Github, ImageIcon } from "lucide-react";
+import { ArrowUpRight, FileText, Github, ImageIcon } from "lucide-react";
 
 const filters = ["All", "Full-Stack", "Frontend", "Backend", "Mobile"] as const;
 type Filter = (typeof filters)[number];
@@ -79,6 +79,11 @@ function ProjectCard({ project }: { project: Project }) {
           {project.demo && (
             <a href={project.demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground">
               <ArrowUpRight className="h-3.5 w-3.5" /> Live
+            </a>
+          )}
+          {project.sampleDoc && (
+            <a href={project.sampleDoc.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground">
+              <FileText className="h-3.5 w-3.5" /> {project.sampleDoc.label}
             </a>
           )}
         </div>

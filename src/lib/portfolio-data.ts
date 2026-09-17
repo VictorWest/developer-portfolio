@@ -1,3 +1,6 @@
+import acresHero from "@/assets/acres/hero.png";
+import monebeautyHero from "@/assets/monebeauty/hero.png";
+
 export const profile = {
   name: "Victor Wariboko-West",
   title: "Software Engineer",
@@ -89,17 +92,35 @@ export type Project = {
   github?: string;
   demo?: string;
   image?: string;
+  sampleDoc?: { label: string; url: string };
 };
 
 // PLACEHOLDERS — replace details, screenshots, and repo links.
 export const projects: Project[] = [
+  {
+    title: "ACRES 2026: Registration & Ticketing Platform",
+    description: "Registration and ticketing backend for a multi-day industry summit in Port Harcourt. Generates QR-coded PDF tickets by email, powers a gate check-in flow, and gives organizers a live admin dashboard with CSV export across three tailored registration forms.",
+    tech: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Resend", "Tailwind CSS"],
+    category: "Full-Stack",
+    demo: "https://acres-website-two.vercel.app/",
+    image: acresHero,
+    sampleDoc: { label: "Sample ticket", url: "/acres/acres-2026-sample-ticket.pdf" },
+  },
+  {
+    title: "Mone Beauty: Booking & CRM Platform for a Helsinki Clinic",
+    description: "Contributed to a production Next.js booking and CRM platform for a Helsinki beauty clinic, handling real-time multi-staff scheduling, GDPR-compliant client intake, Stripe checkout, and an AI support chatbot. Stabilized the build pipeline, verified scheduling logic end-to-end, and migrated the chatbot to a new AI provider.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Stripe", "Playwright"],
+    category: "Full-Stack",
+    demo: "https://monebeauty-for-developer.vercel.app/",
+    image: monebeautyHero,
+  },
   {
     title: "MedTeksi: HIPAA-Conscious Medical Logistics Platform",
     description: "A medical logistics platform that helps labs, hospitals, and pharmacies manage sensitive deliveries with real-time tracking, priority scheduling, compliance enforcement, and end-to-end accountability.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma", "Redux"],
     category: "Full-Stack",
     github: "https://github.com/VictorWest",
-    // demo: "#",
+    demo: "http://med-teksi.co/",
     image: "https://res.cloudinary.com/dflqvjg3w/image/upload/v1780510139/medteksi_qrpghx.png"
   },
   {
@@ -108,7 +129,7 @@ export const projects: Project[] = [
     tech: ["React.js", "JavaScript", "Tailwind CSS", "REST API", "Figma"],
     category: 'Frontend',
     github: "https://github.com/VictorWest",
-    // demo: "#",
+    demo: "http://dentistfind.com/",
     image: "https://res.cloudinary.com/dflqvjg3w/image/upload/v1780510788/Screenshot_232_vpw4jn.png"
   },
   {
@@ -173,36 +194,7 @@ export const projects: Project[] = [
     github: "https://github.com/VictorWest",
     // demo: "#",
     image: 'https://res.cloudinary.com/dflqvjg3w/image/upload/v1780514495/Image_Jun_3_2026_03_05_54_PM_q8n8al.png'
-  },
-  // {
-  //   title: "Project Three",
-  //   description: "Brief description. Mention metrics or impact where possible.",
-  //   tech: ["NestJS", "Prisma", "PostgreSQL", "Docker"],
-  //   category: "Backend",
-  //   github: "https://github.com/VictorWest",
-  // },
-  // {
-  //   title: "Project Four",
-  //   description: "Brief description of this frontend project, its scope and stack.",
-  //   tech: ["React", "Tailwind", "Vite"],
-  //   category: 'Frontend',
-  //   github: "https://github.com/VictorWest",
-  //   demo: "#",
-  // },
-  // {
-  //   title: "Project Five",
-  //   description: "Placeholder description — swap in real copy.",
-  //   tech: ["Laravel", "MySQL", "Alpine.js"],
-  //   category: "Full-Stack",
-  //   github: "https://github.com/VictorWest",
-  // },
-  // {
-  //   title: "Project Six",
-  //   description: "Placeholder description — swap in real copy and a screenshot.",
-  //   tech: ["Kotlin", "Android", "Room"],
-  //   category: "Mobile",
-  //   github: "https://github.com/VictorWest",
-  // },
+  }
 ];
 
 export const leadership = [
